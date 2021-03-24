@@ -1,6 +1,6 @@
 package br.com.loja.service.program;
 
-import br.com.loja.service.Database.ProductDatabase;
+import br.com.loja.service.database.ProductDatabase;
 import br.com.loja.service.entities.Product;
 
 import java.util.*;
@@ -23,18 +23,23 @@ public class Program {
                 System.out.println("3 - desejo adicionar produtos");
                 System.out.println("4 - desejo sair da loja");
                 opcao = sc.nextInt();
+                System.out.println("--------------------------------------------------------");
 
                 switch(opcao){
                     case 1:
-                        ProductDatabase.ReturnListProcucts();
+                        System.out.println("----------- Lista dos produtos: -----------");
+                        ProductDatabase.returnListProducts();
                         Program.programApplication();
+                        System.out.println("-------------------------------------------");
                         break;
 
                     case 2:
-                        System.out.println("Digite o name:");
+                        System.out.println("----------- Produtos relacionados à sua pesquisa: -----------");
+                        System.out.println("Digite o name do produto:");
                         String nome = sc.next();
-                        ProductDatabase.SearchProcucts(nome);
+                        ProductDatabase.searchProducts(nome);
                         Program.programApplication();
+                        System.out.println("--------------------------------------------------------------");
                         break;
 
                     case 3:
@@ -72,7 +77,7 @@ public class Program {
                         System.out.println("Digite a categoria: ");
                         product.setCategory(sc.next());
 
-                        ProductDatabase.AddProcucts(product.getId(), product);
+                        ProductDatabase.addProducts(product.getId(), product);
                         Program.programApplication();
                         break;
 
@@ -85,9 +90,7 @@ public class Program {
                         Program.programApplication();
                         break;
                 }
-
                 sc.close();
-
         } catch (Exception ex) {
             System.out.println(ex);
         }

@@ -44,7 +44,7 @@ public class ProductDatabase {
                                    ", Preço: " + products.getPrice() +
                                    ", Descrição: " + products.getDescription());
             }else{
-                System.out.println("Nenhum produto encontrado!");
+                System.out.println("O produto não foi encontrado!");
             }
         }
     }

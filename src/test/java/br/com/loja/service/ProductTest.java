@@ -37,6 +37,5 @@ public class ProductTest {
     public void deveriaRetornarListaDeTeste() {
         System.out.println("============== Retornar lista: ==============");
         ProductDatabase.returnListProducts();
-
     }
 }

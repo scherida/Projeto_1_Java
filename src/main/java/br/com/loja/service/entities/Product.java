@@ -12,15 +12,6 @@ public class Product {
 
     }
 
-    public Product(int id, int quantity, double price, String name, String description, String category) {
-        this.id = id;
-        this.quantity = quantity;
-        this.price = price;
-        this.name = name;
-        this.description = description;
-        this.category = category;
-    }
-
     public String toString() {
         return " Id: " + this.getId()
                 + "\n Name: " + this.getName()

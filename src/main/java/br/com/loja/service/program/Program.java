@@ -64,10 +64,7 @@ public class Program {
                         System.out.println("Digite o preço:");
                         try{
                             product.setPrice(sc.nextDouble());
-                        }catch (InputMismatchException ex){
-                            System.out.println("Preço inválido!");
-                            Program.programApplication();
-                        }catch (NumberFormatException exc){
+                        }catch (InputMismatchException | NumberFormatException e){
                             System.out.println("Preço inválido!");
                             Program.programApplication();
                         }

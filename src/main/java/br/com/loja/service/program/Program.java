@@ -10,20 +10,20 @@ public class Program {
     public static void programApplication() {
 
         try {
-            int opcao;
+                int opcao;
                 Product product = new Product();
                 Scanner sc = new Scanner(System.in);
                 Locale.setDefault(Locale.US);
 
-                System.out.println("------------- Bem vindo à loja de produtos -------------");
+                System.out.println("=========== Sistema de Produtos: ===========");
                 System.out.println();
-                System.out.println("Escolha uma opção: ");
-                System.out.println("1 - mostrar lista de produtos");
-                System.out.println("2 - Procurar produtos por nome");
-                System.out.println("3 - desejo adicionar produtos");
-                System.out.println("4 - desejo sair da loja");
+                System.out.println("Escolha uma opção:");
+                System.out.println("1 - Mostrar lista de produtos.");
+                System.out.println("2 - Procurar produtos por nome.");
+                System.out.println("3 - Desejo adicionar produtos.");
+                System.out.println("4 - Desejo sair da loja.");
                 opcao = sc.nextInt();
-                System.out.println("--------------------------------------------------------");
+                System.out.println("============================================");
 
                 switch(opcao){
                     case 1:

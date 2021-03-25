@@ -1,30 +1,42 @@
 package br.com.loja.service;
 
+import br.com.loja.service.database.ProductDatabase;
 import br.com.loja.service.entities.Product;
-import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.Mock;
-import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
+import org.springframework.stereotype.Service;
 
-import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
+@Service
 @RunWith(MockitoJUnitRunner.class)
 public class ProductTest {
 
-    private ProductTest service;
+    Product product = new Product();
 
     @Test
-    public void deveriaAdicionarProdutosTest() {
-
+    public void deveriaAdicionarProdutosDeTeste() {
+        product.setId(2);
+        product.setName("shampoo");
+        product.setPrice(75);
+        product.setCategory("Cosméstico");
+        product.setDescription("Shampoo anti-queda");
+        product.setQuantity(45);
+        System.out.println();
+        ProductDatabase.addProducts(1, product);
     }
 
     @Test
-    public void deveriaEncontrarProdutosTest() {
+    public void deveriaEncontrarProdutosdeTeste() {
+        System.out.println("============== Encontrar lista: ==============");
+        deveriaAdicionarProdutosDeTeste();
+        ProductDatabase.searchProducts("shampoo");
+        System.out.println("====================================");
+    }
+
+    @Test
+    public void deveriaRetornarListaDeTeste() {
+        System.out.println("============== Retornar lista: ==============");
+        ProductDatabase.returnListProducts();
+
     }
 }
